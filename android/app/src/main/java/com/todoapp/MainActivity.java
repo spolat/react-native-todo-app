@@ -19,32 +19,6 @@ public class MainActivity extends ReactActivity {
 
     private ProgressDialog mProgressDialog;
 
-    /*@Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        mProgressDialog = new ProgressDialog(MainActivity.this);
-        mProgressDialog.setTitle("Please wait");
-        mProgressDialog.setMessage("Getting Notes...");
-        mProgressDialog.show();
-
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, GET_NOTES_URL, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                mProgressDialog.dismiss();
-                Toast.makeText(MainActivity.this, response.toString() + "", Toast.LENGTH_LONG).show();
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                mProgressDialog.dismiss();
-                Toast.makeText(MainActivity.this, error.toString() + "", Toast.LENGTH_LONG).show();
-            }
-        });
-
-        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-        requestQueue.add(stringRequest);
-    }*/
-
     /**
      * Returns the name of the main component registered from JavaScript.
      * This is used to schedule rendering of the component.
