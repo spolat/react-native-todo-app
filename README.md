@@ -60,9 +60,9 @@ getNotes(){
 Fill notes to view
 ```javascript
 for(var i = 0; i < responseData.length; i++)
-      {
-        this.state.noteArray.push({'date' : responseData[i].date , 'note' : responseData[i].note});
-        this.setState({noteArray : this.state.noteArray});
-        this.setState({noteText : ''});
-      }
+  {
+    this.state.noteArray.push({'date' : responseData[i].date , 'note' : responseData[i].note});
+    this.setState({noteArray : this.state.noteArray});
+    this.setState({noteText : ''});
+  }
 ```
