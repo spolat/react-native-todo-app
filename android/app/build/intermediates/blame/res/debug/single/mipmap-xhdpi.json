@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/home/thunderat/react-native-todo-app/android/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher.png",
+        "source": "/home/thunderat/react-native-todo-app/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
         "merged": "/home/thunderat/react_project/todoapp/android/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher.png",
         "source": "/home/thunderat/react_project/todoapp/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
     }

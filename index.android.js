@@ -18,6 +18,7 @@ import {
 } from 'react-native';
 
 import Note from './app/components/Note';
+Globals = require('./Globals');
 
 export default class todoapp extends Component {
 
@@ -27,7 +28,11 @@ export default class todoapp extends Component {
   }
 
   render() {
-
+    if(Globals.isCalledGetNotes)
+    {
+      this.getNotes();
+      Globals.isCalledGetNotes = false;
+    }
     let notes = this.state.noteArray.map((val,key) => {
       return <Note key={key} keyval={key} val={val} deleteMethod={() => this.deleteNote(key)}/>
     });
@@ -90,7 +95,32 @@ export default class todoapp extends Component {
     }
   }
 
+  getNotes(){
+    fetch('http://androidtodoapp.herokuapp.com/getNotes' , {
+      method : 'POST',
+      headers : {
+        'Accept':       'application/json',
+        'Content-Type': 'application/json',
+      },
+    })
+    .then((response) => response.json())
+    .then((responseData) => {
+      for(var i = 0; i < responseData.length; i++)
+      {
+        this.state.noteArray.push({'date' : responseData[i].date , 'note' : responseData[i].note});
+        this.setState({noteArray : this.state.noteArray});
+        this.setState({noteText : ''});
+      }
+    })
+    .catch((error) => {
+      Alert.alert(error.toString());
+    })
+  }
 
+  deleteNote(key){
+    this.state.noteArray.splice(key,1);
+    this.setState({noteArray: this.state.noteArray});
+  }
 }
 
 const styles = StyleSheet.create({
